@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React from 'react';
+
 import { useRecoilState, useRecoilValue } from 'recoil';
-import {
-  toDoState,
-  IToDo,
-  toDoSelector,
-  categoryState,
-  Categories,
-} from '../atom';
+
+import { toDoSelector, categoryState, Categories } from '../atom';
 import CreateToDo from './CreateToDo';
 import ToDo from './ToDo';
 
 export interface IForm {
   toDo: string;
 }
+
 function ToDoList() {
   const toDos = useRecoilValue(toDoSelector);
   const [category, setCategory] = useRecoilState(categoryState);
@@ -37,6 +33,8 @@ function ToDoList() {
       {toDos?.map((toDo) => (
         <ToDo key={toDo.id} {...toDo} />
       ))}
+
+      <div></div>
     </div>
   );
 }

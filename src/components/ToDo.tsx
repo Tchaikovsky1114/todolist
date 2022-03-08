@@ -2,6 +2,7 @@ import React from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { toDoState, IToDo, Categories, deleteSelector } from '../atom';
 import styled from 'styled-components';
+import { recoilPersist } from 'recoil-persist';
 
 const Button = styled.button`
   font-size: 0.6rem;
@@ -33,7 +34,6 @@ const ToDo = ({ id, category, text }: IToDo) => {
     } = event;
     setToDos((prev: any) => {
       const targetIndex = prev.findIndex((toDo: any) => toDo.id === id);
-
       const newToDo: any = { id, category: name as any, text };
 
       return [
