@@ -54,6 +54,9 @@ table {
     box-sizing: border-box;
   }
   body {
+    border: 5px solid white;
+    padding: 10px;
+    margin: 20%;
     font-family: 'Source Sans Pro', sans-serif;
     background-color:${(props) => props.theme.bgColor};
     color:${(props) => props.theme.textColor};

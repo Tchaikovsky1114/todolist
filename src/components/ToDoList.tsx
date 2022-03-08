@@ -19,17 +19,42 @@ function ToDoList() {
 
   return (
     <div>
-      <select value={category} onInput={onInput}>
-        <option value={Categories.To_Do}>To Do</option>
-        <option value={Categories.DOING}>Doing</option>
-        <option value={Categories.DONE}>Done</option>
-      </select>
-
       {/* nomad say it is way to sucks. it is not the best way, we have to use Recoil */}
       {/* {category === 'To_Do' && <li>hi i am todo</li>}
       {category === 'Doing' && <li>"hi i am doing"</li>}
       {category === 'Done' && <li>"hi i am done"</li>} */}
       <CreateToDo />
+      <h1
+        style={{
+          color: 'white',
+          textAlign: 'left',
+          display: 'block',
+          marginTop: '50px',
+          padding: '3px',
+          width: '50%',
+          borderRadius: '5px',
+          fontSize: '0.8rem',
+          fontWeight: 'bold',
+          marginLeft: '0.225rem',
+        }}
+      >
+        Workstate
+      </h1>
+      <hr />
+      <select
+        style={{
+          margin: '10px 0px',
+          boxShadow: '2px 2px 5px',
+          width: '100px',
+          borderRadius: '20px',
+        }}
+        value={category}
+        onInput={onInput}
+      >
+        <option value={Categories.To_Do}>To Do</option>
+        <option value={Categories.DOING}>Doing</option>
+        <option value={Categories.DONE}>Done</option>
+      </select>
       {toDos?.map((toDo) => (
         <ToDo key={toDo.id} {...toDo} />
       ))}

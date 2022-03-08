@@ -64,17 +64,29 @@ const ToDo = ({ id, category, text }: IToDo) => {
         <List key={id}>
           <Text>{text}</Text>
           {category !== Categories.DOING && (
-            <Button name={Categories.DOING} onClick={onClick}>
+            <Button
+              style={{ boxShadow: '2px 2px 5px' }}
+              name={Categories.DOING}
+              onClick={onClick}
+            >
               Doing
             </Button>
           )}
           {category !== Categories.To_Do && (
-            <Button name={Categories.To_Do} onClick={onClick}>
+            <Button
+              style={{ boxShadow: '2px 2px 5px' }}
+              name={Categories.To_Do}
+              onClick={onClick}
+            >
               To Do
             </Button>
           )}
           {category !== Categories.DONE && (
-            <Button name={Categories.DONE} onClick={onClick}>
+            <Button
+              style={{ boxShadow: '2px 2px 5px' }}
+              name={Categories.DONE}
+              onClick={onClick}
+            >
               Done
             </Button>
           )}
@@ -82,6 +94,7 @@ const ToDo = ({ id, category, text }: IToDo) => {
             value={id}
             onClick={handleDeleteToDo}
             style={{
+              boxShadow: '2px 2px 5px',
               backgroundColor: 'orangered',
               border: '1px solid orangered',
             }}
